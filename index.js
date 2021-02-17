@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUI = require("swagger-ui-express")
@@ -6,6 +7,7 @@ const axios = require('axios');
 const { Console } = require('console');
 const app = express();
 
+const port = process.env.PORT || 3000
 const swaggerOption = {
     swaggerDefinition: {
         info: {
@@ -123,4 +125,4 @@ app.get('/average', (req, res)=>{
 })
 
 
-app.listen(process.env.PORT || 3000, ()=>console.log('server up and runing'))
+app.listen(port, ()=>console.log('server up and runing'))
