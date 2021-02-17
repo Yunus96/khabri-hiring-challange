@@ -123,4 +123,4 @@ app.get('/average', (req, res)=>{
 })
 
 
-app.listen(3000, ()=>console.log('server up and runing'))
+app.listen(process.env.PORT || 3000, ()=>console.log('server up and runing'))
